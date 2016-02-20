@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="bezier.js"></script>
+    </head>
+    <body>
+        <canvas id="canvas" width="600px" height="400px">
+        </canvas>
+        <div id="results"></div>
+        <script type="text/javascript">
+            var canvas = $('#canvas');
+            var sg = SplineGroup('tubes.jpg', canvas[0].getContext("2d"), 100);
+            sg.draw();
+            canvas.mousedown(sg.handleMouse);
+            canvas.mouseup(sg.handleMouse);
+            canvas.mousemove(sg.handleMouse);
+            canvas.mouseleave(sg.handleMouse);
+        </script>
+    </body>
+</html>
